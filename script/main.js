@@ -1,4 +1,5 @@
-const urlBassic = "https://conveniosbackend-production.up.railway.app"
+const urlBassic ="https://convenios-ufps-production.up.railway.app"
+// "https://conveniosbackend-production.up.railway.app"
 
 async function listaConveniosUFPS() {
     const result = await fetch(urlBassic + "/convenios/lista")
