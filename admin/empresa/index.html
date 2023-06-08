@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <title>ADMIN CONVENIOS INTERINSTITUCIONAL </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Agregar el enlace CDN de DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css">
+    <!--
+
+TemplateMo 570 Chain App Dev
+
+https://templatemo.com/tm-570-chain-app-dev
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="../../assets/css/animated.css">
+    <link rel="stylesheet" href="../../assets/css/owl.css">
+
+</head>
+
+<body onload="verEmpresas()">
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="../../assets/images/logo ufps.png" alt="" class="img-fluid" style="max-width: 50px;">
+                            <h3 class="p-5 text-dark">CONVENIOS INTERINSTITUCIONAL EMPRESAS-UFPS</h3>
+
+
+                        </a>
+
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                           
+
+                            <li class="scroll-to-section"><a href="./index.html" class="active">Convenios</a></li>
+                            
+                            <li>
+                                <div class="gradient-button text-danger"><a href="../index.html"><i
+                                            class="fa fa-sign-in-alt"></i>
+                                        Salir</a></div>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12 align-self-center">
+
+                            <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s"
+                                data-wow-delay="1s">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="container bg-dark text-center">
+                                            <h1 class="text-light">Agregar Convenios</h1>
+                                            <form id="formulario-convenio">
+                                                
+                                                <div class="form-group">
+                                                  <label for="nombre">Nombre:</label>
+                                                  <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" required>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, ingrese un nombre válido.
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="fechaInicio">Fecha de Convenio:</label>
+                                                  <input type="date" class="form-control" id="fechaInicio" required>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, seleccione una fecha de inicio.
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="empresa">Sector:</label>
+                                                  <select class="form-control" id="sector" required>
+                                                    <option value="">Seleccione un sector</option>
+                                                    <option value="privado">Privado</option>
+                                                    <option value="publico">Público</option>
+                                                  </select>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, seleccione un sector.
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="duracion">Duración:</label>
+                                                  <input type="text" class="form-control" id="duracion" placeholder="Ingrese la duración" required>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, ingrese una duración válida.
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="empresa">Empresa:</label>
+                                                  <select class="form-control" id="empresa" required>
+                                                    
+                                                  </select>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, seleccione una empresa.
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="representante">Representante legal:</label>
+                                                  <input type="text" class="form-control" id="representante" placeholder="Ingrese el representante legal" required>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, ingrese un representante legal válido.
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                  <label for="estado">Estado:</label>
+                                                  <select class="form-control" id="estado" required>
+                                                    <option value="">Seleccione un estado</option>
+                                                    <option value="vigente">Vigente</option>
+                                                    <option value="pendiente">Pendiente</option>
+                                                    <option value="finalizado">Finalizado</option>
+                                                  </select>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, seleccione un estado.
+                                                  </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="empresa">Link:</label>
+                                                    <input type="text" class="form-control" id="link" placeholder="Ingrese el representante legal" required>
+                                                  <div class="invalid-feedback">
+                                                    Por favor, ingrese un Link.
+                                                  </div>
+                                                  </div>
+                                                <button type="button" class="btn btn-primary" onclick="registrarConvenio()">Guardar</button>
+                                              </form>
+                                              
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <footer id="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4>Contact Us</h4>
+                        <p>UFPS, CÚCUTA</p>
+                        <p><a href="#">angeldanielrago@ufps.edu.co</a></p>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3">
+                    <div class="footer-widget">
+                        <h4>Universidad Francisco De Paula Santander</h4>
+                        <div class="logo">
+                            <img src="../assets/images/logo ufps.png" alt="">
+                        </div>
+                        <p>"La UFPS soy yo, eres tú, somos todos"</p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="copyright-text">
+                        <p>Copyright © 2023 Daniel Ramirez All Rights Reserved.
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../script/main.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/js/owl-carousel.js"></script>
+    <script src="../../assets/js/animation.js"></script>
+    <script src="../../assets/js/imagesloaded.js"></script>
+    <script src="../../assets/js/popup.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    <script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+</body>
+
+</html>
